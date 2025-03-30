@@ -3,7 +3,7 @@ anim8 = require 'Libraries/anim8'
 love.graphics.setDefaultFilter("nearest", "nearest")
 function player.load()
     player.x = 400
-    player.y = 400
+    player.y = 450
     player.Legs_spritesheet = love.graphics.newImage("Sprites/Legs_spritesheet.png")
     player.Torso = love.graphics.newImage("Sprites/Torso.png")
     player.Head_spritesheet = love.graphics.newImage("Sprites/Head_spritesheet.png")
@@ -16,19 +16,19 @@ function player.load()
         Head = anim8.newAnimation(player.Head_grid('1-8', 1), 0.2),
     }
     player.anim = player.animation.left
-    love.window.setMode(800, 800)
+    
 end
 
 function player.update(dt)
     ismoving = false
 
     if love.keyboard.isDown("a") then
-        player.x = player.x - 3 
+        player.x = player.x - 2.5 
         player.anim = player.animation.right
         ismoving = true
     end
     if love.keyboard.isDown("d") then
-        player.x = player.x + 3 
+        player.x = player.x + 2.5 
         player.anim = player.animation.left
         ismoving = true
     end

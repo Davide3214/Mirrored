@@ -2,6 +2,7 @@ player = require('player')
 reflection = require('reflection')
 map = require('map')
 function love.load()
+    
     map.load()
     reflection.load()
     player.load()

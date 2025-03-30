@@ -1,16 +1,23 @@
 map = {}
+sti = require 'Libraries/sti'
+Map1 = sti('Maps/map_1.lua')
 function map.load()
-    map.window = love.graphics.newImage("Sprites/Window.png")
-    map.white_layer = love.graphics.newImage("Sprites/White_layer.png")
+    love.window.setTitle("Mirrored")
+    Base = love.graphics.newImage("Sprites/Base.png")
+    Map = 1
 end
 
 function map.update(dt)
-    
+    if player.x > 800 then
+        Map = Map+1
+    end
 end
 
 function map.draw()
-    love.graphics.draw(map.window, 400, 400)
-    love.graphics.draw(map.white_layer, 400, 400)
+    if Map == 1 then
+        Map1:draw()
+    end
+    love.graphics.draw(Base, 0, 500)
 end
 
 return map
