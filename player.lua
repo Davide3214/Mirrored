@@ -21,7 +21,7 @@ end
 
 function player.update(dt)
     ismoving = false
-
+    
     if love.keyboard.isDown("a") then
         player.x = player.x - 2.5 
         player.anim = player.animation.right

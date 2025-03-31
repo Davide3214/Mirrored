@@ -9,7 +9,7 @@ function love.load()
 end
 
 function love.update(dt)
-    map.update()
+    map.update(dt)
     reflection.update(dt)
     player.update(dt)
 end
